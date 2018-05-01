@@ -1,0 +1,82 @@
+<html lang="en"> <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Register Form</title>
+  </head>
+  <style>
+    h1{
+      margin-left: 80px;
+      height: 69px;
+    }
+    body {
+  font: 13px/20px 'Lucida Grande', Tahoma, Verdana, sans-serif;
+  color: #404040;
+  background-image:url(https://avante.biz/wp-content/uploads/Wallpapers-Fantasy/Wallpapers-Fantasy-001.jpg);
+background-size: cover;
+
+
+}
+.container {
+  margin: 80px auto;
+  width: 640px;
+}
+.email{
+  margin-left: 44px;
+  height: 35px;
+  width: 243px;
+  border-radius: 14px;
+}
+.Pass{
+  margin-left: 44px;
+  height: 35px;
+  width: 243px;
+  border-radius: 14px;
+
+}
+.btn{
+  margin-left: 44px;
+  height: 35px;
+  width: 243px;
+  border-radius: 14px;
+}
+.Register {
+  position: relative;
+  margin: 0 auto;
+  padding: 20px 20px 20px;
+  width: 335px;
+  background: white;
+  border-radius: 25px;
+  height: 340px;
+  box-shadow(0 0 200px rgba(white, .5), 0 1px 2px rgba(black, .3));
+}
+.first{
+margin-left: 44px;
+  height: 35px;
+  width: 243px;
+  border-radius: 14px;
+}
+.last{
+    margin-left: 44px;
+  height: 35px;
+  width: 243px;
+  border-radius: 14px;
+}
+
+  </style>
+ 
+<body>
+    <section class="container">
+    <div class="Register">
+      <h1>Register to Web App</h1>
+    <form id="signup" name="signup" method="post" action="/signup">
+    <p><input class="email" class="text" name="email" type="email" placeholder="Email"></p>
+    <p><input class="first" name="firstname" type="text" placeholder="Firstname"></p>
+    <p><input class="last" name="lastname" type="text" placeholder="LastName"></p>
+    <p><input class="Pass" name="password" type="password" name="password" placeholder="Password" />
+     <p class="submit"><input class="btn" type="submit" value="Sign Up" ></p>
+    </form></div></section>
+ 
+</body>
+ 
+</html>

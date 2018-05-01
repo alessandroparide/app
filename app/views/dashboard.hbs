@@ -1,0 +1,53 @@
+<html>
+
+<head>
+    <div>
+        <a href="http://localhost:5000/logout">
+            <button>Logout</button>
+        </a>
+    </div>
+    
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        
+        $(function ()  {
+            const $room = $('#newroom');
+            $room.keypress (function (event) {
+                
+                if (event.which !== 13){
+                    $.ajax({
+                        type: 'GET',
+                        uri: '/create',
+                        data: {
+                            room_name:$newroom.val()
+                        },
+                        success: function(data) {
+                        $("<ol>").append('link');
+                      }
+                        
+                    }); };             
+            });
+        });
+    </script>
+</head>
+
+<body>
+    
+    
+    <form id="room" action="" method="GET">
+        <input id="newroom" placeholder="new room" type="">
+        
+    </form>
+    <ol>
+
+    </ol>
+
+    <div class="Room">
+
+    </div>
+
+
+
+</body>
+
+</html>

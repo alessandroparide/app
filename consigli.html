@@ -1,0 +1,22 @@
+<script type="text/javascript"> // [1] `type="text/javascript"` è implicito, non c'è bisogno di scriverlo
+    $(document).ready (function () { // [1] scrivere `$(function () {` è più conciso [2] non ha senso eseguire `$(document)` perchè non ci serve questo oggetto (cose in più che si fanno = tempo in più che ci vuole)
+      $('#newroom').keypress(function (event) { // [1] esegui `$('#newroom')` 2 volte, meglio farlo 1 volta sola e salvare il risultato in una variabile (cose in più che si fanno = tempo in più che ci vuole)
+        var root = $('#newroom').val (); // [1] non ha senso prendere il valore di `#newroom` se poi non ci serve (cose in più che si fanno = tempo in più che ci vuole)
+        if (event.which == 13) { // [1] Dimenticati del doppio uguale (==), si usa sempre il triplo uguale (===) [2] questo rigo è difficile da leggere, chi si ricorda che significa "13", come minimo qua ci vuole un commento per ricordarselo [3] scrivendo la cosa così: `if ( event.which !== 13 ) return;` si evita di indentare il codice seguente di un altro livello, meno livelli di indentazione ci sono meglio è
+          $.ajax({
+            type: 'POST',
+            url: "http://localhost:5000/room.js", // [1] Scrivi sempre "url" parziali, tranne che stai puntando a qualcosa al di fuori del tuo sito, quindi non scrivere mai il protocollo (http), il dominio (localhost) e la porta (5000) [2] devi usare singoli apici per questa stringa
+            data: (`newroom ${newroom}`), // [1] passa sempre un oggetto a `data`, se ci sono spazi nel valore di `newroom` mi sa che non funziona questo rigo [2] scrivi questa stringa usando "template literal", se proprio non puoi usare questa funzionalità (ti manca il tasto nella tastiera) almeno usa singoli apici
+            dataType: "html", // [1] non vuoi che il server ti ritorni `html`, quindi questo parametro è sbagliato [2] jquery può trattare la risposta del server intelligentemente, non serve specificare questo parametro
+          }) // [1] manca un `;`
+        }
+      }) // [1] manca un `;`
+    });
+    
+    // Cose extra: 
+    //   [1] la formattazione del codice è da migliorare (io metterei più spazi qua e la, adesso è tutto un po' troppo appiccicato)
+    //   [2] mancano diversi `;`
+    //   [3] le stringhe vanno sempre messe tra apostrofi ('stringa'), tranne che contengono singoli apostrofi, allora va bene metterle dentro virgolette ("stringa")
+    //       se nella stringa vengono interpolate delle variabili (se gli scrivi dentro il valore di una variabile) allora meglio usare "template literals", si scrivono così (`stringa ${myVar}`), ma tu non hai il backtick nella tastiera (`) :/
+    
+  </script>

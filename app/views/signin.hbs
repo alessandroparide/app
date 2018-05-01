@@ -1,0 +1,39 @@
+<html lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Login Form</title>
+  <link href="/static/stylesheet/style.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+  <section class="container">
+    <div class="login">
+      <h1>Login</h1>
+      <form id="signin" name="signin" method="post" action="signin">
+        <p>
+          <input class="email" type="text" id="email" name="email" value="" placeholder="Email">
+        </p>
+
+        <p>
+          <input class="Pass" type="password" name="password" placeholder="Password">
+        </p>
+        <p class="submit">
+          <input class="btn" type="submit" name="commit" value="Sign In">
+        </p>
+      </form>
+
+
+      <div class="login-help">
+        <p>Non sei Registrato?
+          <a href="http://localhost:5000/signup">Click here to Sign Up</a>.</p>
+      </div>
+    </div>
+  </section>
+
+
+</body>
+
+</html>
